@@ -19,8 +19,17 @@
     return 하도록 solution 함수를 완성해주세요.*/
     
     function solution(absolutes, signs) {
-    var answer = 123456789;
-    return answer;
+        
+    let sum = 0;
+
+    for(let i = 0; i <absolutes.length; i ++){
+        if(signs[i]){
+            sum += absolutes[i];
+        }else{
+            sum -= absolutes[i];
+        }
+    }
+    return sum;
 }
     </script>
 </body>
