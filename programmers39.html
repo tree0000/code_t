@@ -6,8 +6,22 @@
     <title>Document</title>
 </head>
 <body>
-  
+  <!-- 연속된 세 개의 정수를 더해 12가 되는 경우는 3, 4, 5입니다. 두 정수 num과 total이 주어집니다. 
+연속된 수 num개를 더한 값이 total이 될 때, 정수 배열을 오름차순으로 담아 return하도록 solution함수를 완성해보세요. -->
+<script>
+    //등차수열이다.
+function solution(num, total) { 
+    const n = total / num - (num -1)/2;//수열의 합 공식을 대입
+    const answer = []; // 배열에 담아 For사용해 수를 돌림
+    for(let i=0; i<num; i++){
+        answer.push(n+i); //반복한 정수를 추가 .
+    }
+    return answer;
 
+}
+
+
+</script>
 </body>
 
 
