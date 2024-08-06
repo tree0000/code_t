@@ -11,7 +11,7 @@
 <script>
     //일반항의 등차수열이다.
     //수열의 합공식을 사용하여 연속된 수의 합을 구하고 그 수들을 배열에 담아 풀이 해보자
-
+    
 function solution(num, total) { 
 
     const n = total / num - (num -1)/2;//수열의 합 공식을 대입
@@ -24,6 +24,8 @@ function solution(num, total) {
     return answer; //반환
 
 }
+
+//가장 시간이 많이 걸리는 부분은 for 루프 이므로 for문 사용을 지양하는 코테연습을 for문을 쓰지 않는 지향해야겠다.
 </script>
 </body>
 
