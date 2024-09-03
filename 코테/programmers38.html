@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- i팩토리얼 (i!)은 1부터 i까지 정수의 곱을 의미합니다. 
+    예를들어 5! = 5 * 4 * 3 * 2 * 1 = 120 입니다. 정수 n이 주어질 때
+    다음 조건을 만족하는 가장 큰 정수 i를 return 하도록 solution 함수를 완성해주세요. -->
+    <!-- 팩토리얼은 n을 계승하는 식이다.
+    n!...!이 성립하기 위해서는 처음수를 1로 지정하고 1* n * n+1 ... 이므로 for문이나 while문으로
+     연속 반복을 지정 후 return 문이나 break를 써서 활용할 예정이다.
+    순열의 조합으로 풀고 싶었지만 아직 수학공식을 코드로 짜기에는 실력부족! 실력이 된다면 재귀함수로 다시 풀이 연습필요!!-->
+    <!-- 첫번째 풀이 -->
+    <script>
+        
+function solution(n) {
+    //변수 지정 1부터 i까지 정수를 곱하므로 1로 잡는다.
+    let answer = 1;
+    let i =0;
+    //while문으로 반복문하여 만족하는 정수값 구하기
+    while(true){
+        //if문으로 조건 추가
+        if(answer <= n){
+            //1의 *에 1씩 증가 하여 팩토리얼의 증가값 나열
+            answer *  i +1; // 여기서 무한루프 발생!
+            i++
+        }
+    }
+     return i-1;
+}
+//실행 시간이 10.0초를 초과하여 실행이 중단되었습니다. 실행 시간이 더 짧은 다른 방법을 찾아보세요.
+//if(answer <= n){ n 이 answer 보다 작아야하는데 생각을 잘못함!
+
+//2번째 풀이
+function solution(n) {
+    //변수 지정 1부터 i까지 정수를 곱하므로 1로 잡는다.
+    let answer = 1;
+    let i = 0;
+    // while문으로 반복문하여 만족하는 정수값 구하기
+    while (true) {
+        // if문으로 조건 추가
+        if (answer > n) {// answer가 n을 초과하면 i-1을 반환
+// 여기서 i - 1을 반환하는 이유는 i를 증가시키고 팩토리얼을 계산한 후,
+//  그 값이 n을 초과했으므로 마지막으로 유효했던 i 값을 반환해야함
+            return i - 1; 
+        }
+        //i 값을 증감 
+        i++;
+         // 1의 *에 1씩 증가하여 팩토리얼의 증가값 나열
+        answer *= i;
+    }
+}
+
+    </script>
+</body>
+
+
+
+

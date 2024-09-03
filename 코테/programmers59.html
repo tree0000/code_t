@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+
+-->
+<body>
+<script>
+function maxDepth(root) {
+    if (root === null) {
+        return 0;
+    }
+
+    // 왼쪽 서브트리의 깊이
+    let leftDepth = maxDepth(root.left);
+
+    // 오른쪽 서브트리의 깊이
+    let rightDepth = maxDepth(root.right);
+
+    // 더 큰 깊이에 1을 더해 반환
+    return Math.max(leftDepth, rightDepth) + 1;
+}
+</script>
+</body>
+
+

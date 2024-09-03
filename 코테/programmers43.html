@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+피보나치 수는 F(0) = 0, F(1) = 1일 때,
+ 1 이상의 n에 대하여 F(n) = F(n-1) + F(n-2) 가 적용되는 수 입니다.
+예를들어
+
+F(2) = F(0) + F(1) = 0 + 1 = 1
+F(3) = F(1) + F(2) = 1 + 1 = 2
+F(4) = F(2) + F(3) = 1 + 2 = 3
+F(5) = F(3) + F(4) = 2 + 3 = 5 
+
+2 이상의 n이 입력되었을 때, 
+n번째 피보나치 수를 1234567으로 나눈 나머지를 리턴하는 함수,
+ solution을 완성해 주세요.
+
+ Fn+2 = Fn+1 + Fn -->
+<body>
+<script>
+// const s = (function() {
+//     let n = {};  
+//     const Fibonacci = (number) => {
+//         if (n[number]) return n[number];
+        
+//         if (number === 0) return 0;
+//         if (number === 1) return 1;
+
+//         //재귀로 피보나치 수 계산하고 1234567로 나눈 나머지를 계산 후 모듈러 연산
+//         let result = (Fibonacci(number - 1) + Fibonacci(number - 2)) % 1234567;
+//         n[number] = result;
+//         return result;
+//     };
+
+//     return function(n) {
+//         return Fibonacci(n);
+//     };
+// })();
+
+
+
+
+function Fibonacci(number) {
+  if(num < 2) return num;
+ // number가 2 이상일때 Fibonacci(number-1), Fibonacci(number-2) 호출
+  return Fibonacci(number-1) + Fibonacci(number-2);
+}
+
+
+</script>
+</body>
+
+
+
+
+Fn+2 =Fn+1 + Fn 

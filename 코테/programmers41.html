@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 1부터 입력받은 숫자 n 사이에 있는 소수의 개수를 반환하는 함수, solution을 만들어 보세요.
+
+소수는 1과 자기 자신으로만 나누어지는 수를 의미합니다.
+(1은 소수가 아닙니다.)
+소수는 n^2 인걸 생각
+ -->
+<!-- 이중 for문 밖에 생각이 나지 않아 고민하다가 풀이 시작 -->
+<script>
+// function solution(n) {
+//     // 카운트에 변수를 담는다.
+//     let Count = 0;
+// //For문으로 2~ n개의 소수를 구한다.
+//     for (let i = 2; i <= n; i++) {
+//         let Prime = true;
+//         for (let j = 2; j < i; j++) {
+//             //소수는 2 뺴고 나머지 전부 홀수이므로 나눠지는지 실행
+//             if (i % j === 0) {
+//                 //소수가 아니면 false
+//                 Prime = false;
+//                 break;
+//             }
+//         }
+//         //true 이면 ++ 증가값 
+//         if (Prime) {
+//             Count++;
+//         }
+//     }
+
+//     return Count;
+// } 시간초과 
+
+//[다른방법] 왜 for문으로 사용하면 시간 초과가 날까.. 그럼 2가 아닌 모든 홀수를 배열에 담아
+// 내서 출력하면 되지 않을까?
+
+function solution(n) {
+    //일단 2보다 큰수를 리턴
+    if (n < 2) {
+        return 0;
+    }
+    // n+1 크기의 배열을 true로 초기화합니다.
+    let Prime = new Array(n + 1).fill(true);
+     // 0과 1을 제외 시킨다.
+    Prime[0] = Prime[1] = false;
+    //for문으로 2 제곱부터 반복
+    for (let p = 2; p * p <= n; p++) {
+        if (Prime[p]) {
+            // p (2의제곱)은 짝수 이므로 배수들을 모두 false이다.
+            for (let i = p * p; i <= n; i += p) {
+                Prime[i] = false;
+            }
+        }
+    }
+    // 남은수가 소수이므로 count 하여 리턴한다.
+    let count = 0;
+    for (let i = 2; i <= n; i++) {
+        if (Prime[i]) {
+            count++;
+        }
+    }
+    return count;
+}
+
+
+
+
+
+</script>
+</body>
+
+
+
+

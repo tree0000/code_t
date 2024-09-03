@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+명함 지갑을 만드는 회사에서 지갑의 크기를 정하려고 합니다.
+ 다양한 모양과 크기의 명함들을 모두 수납할 수 있으면서, 
+ 작아서 들고 다니기 편한 지갑을 만들어야 합니다. 
+ 이러한 요건을 만족하는 지갑을 만들기 위해 
+ 디자인팀은 모든 명함의 가로 길이와 세로 길이를 조사했습니다.
+
+
+-->
+<body>
+<script>
+function solution(sizes) {
+    let Mwidth = 0;
+    let Mheight = 0;
+    
+    for (let i = 0; i < sizes.length; i++) {
+        let width, height;
+        
+        if (sizes[i][0] > sizes[i][1]) {
+            width = sizes[i][0];
+            height = sizes[i][1];
+        } else {
+            width = sizes[i][1];
+            height = sizes[i][0];
+        }
+        
+        if (width > Mwidth) {
+            Mwidth = width;
+        }
+        
+        if (height > Mheight) {
+            Mheight = height;
+        }
+    }
+    
+    // 크기 계산
+    return Mwidth * Mheight;
+}
+
+</script>
+</body>
+
+
+
+
+Fn+2 =Fn+1 + Fn 

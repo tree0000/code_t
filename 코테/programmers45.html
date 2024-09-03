@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+연결 리스트의 헤드가 주어졌을 때 head, 연결 리스트에 사이클이 있는지 확인하세요.
+
+연결 리스트에서 포인터를 계속 따라가면 다시 도달할 수 있는 노드가 리스트에 있는 경우사이클이 있습니다 
+  next . 내부적으로는 tail의  포인터가 연결된  pos 노드의 인덱스를 나타내는 데 사용됩니다.
+  매개변수로 전달되지 않는다는 점에 유의하세요.
+true연결 리스트에 사이클이 있으면 반환합니다  . 그렇지 않으면 반환합니다 false.
+-->
+<body>
+<script>
+   function hasCycle(head) {
+    let node1 = new Set();
+    let node2 = head;
+    
+    while (node2 !== null) {
+        if (node1.has(node2)) {
+            return true; 
+        }
+        node1.add(node2); 
+        node2 = node2.next; 
+    }
+    
+    return false; 
+}
+
+</script>
+</body>
+
+

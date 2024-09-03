@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+head단일 연결 목록의 경우 다음 중 true하나인 경우 반환합니다.
+회문 또는 false그렇지 않으면 .
+
+풀이접근 :연결 리스트의 중간을 찾고, 후반부 리스트를 뒤집은 후 앞부분과 비교
+2를 찾아서 풀이 
+-->
+<body>
+<script>
+function Palindrome(head) {
+    let values = [];
+    
+    while (head !== null) {
+        values.push(head.val);
+        head = head.next;
+    }
+    //뒤집기
+    let revers = [...values].reverse();
+    
+    //뒤집힌 배열 비교
+    for (let i = 0; i < values.length; i++) {
+        if (values[i] !== revers[i]) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+</script>
+</body>
+
+

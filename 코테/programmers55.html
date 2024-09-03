@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+이진트리 경로
+root 이진트리가 주어지면 루트에서 리프까지의 모든 경로를 임의의 순서로 반환할때
+노드는 자식이 없다.
+
+-->
+<body>
+<script>
+    //설명
+class TreeNode {
+    constructor(val = 0, left = null, right = null) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+}
+function binary(root) {
+    if (!root) return [];
+
+    const paths = [];
+    //경로 저장
+    const stack = [[root, root.val.toString()]];
+
+    while (stack.length > 0) {
+        const [node, path] = stack.pop();
+
+        // 리프 노드에 도달했을 때 경로를 저장
+        if (!node.left && !node.right) {
+            paths.push(path);
+        }
+        // 오른쪽 자식이 있는 경우 스택에 추가
+        if (node.right) {
+            stack.push([node.right, path + "->" + node.right.val]);
+        }
+
+        // 왼쪽 자식이 있는 경우 스택에 추가
+        if (node.left) {
+            stack.push([node.left, path + "->" + node.left.val]);
+        }
+    }
+
+    return paths;
+}
+
+</script>
+</body>
+
+

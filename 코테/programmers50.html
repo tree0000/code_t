@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+모의고사
+
+각 찍는 방식을 배열에 넣어서 반복하고 리턴.
+
+-->
+<body>
+
+<script>
+    //참고함
+function solution(answers) {
+    const arr = [
+        [1, 2, 3, 4, 5], 
+        [2, 1, 2, 3, 2, 4, 2, 5], 
+        [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]
+    ];
+    
+    const scores = [0, 0, 0]; // 각 수포자의 점수를 저장할 배열
+    const result = []; // 최종적으로 정답을 반환할 배열
+
+    // 각 수포자의 점수를 계산
+    for (let i = 0; i < answers.length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+            if (answers[i] === arr[j][i % arr[j].length]) {
+                scores[j]++;
+            }
+        }
+    }
+
+    // 가장 높은 점수를 찾음
+    const maxScore = Math.max(...scores);
+
+    // 가장 높은 점수를 받은 수포자(들)를 찾음
+    for (let i = 0; i < scores.length; i++) {
+        if (scores[i] === maxScore) {
+            result.push(i + 1); // 수포자 번호는 1번부터 시작하므로 +1
+        }
+    }
+
+    return result.sort((a, b) => a - b); // 오름차순으로 정렬하여 반환
+}
+
+
+</script>
+</body>
+
+

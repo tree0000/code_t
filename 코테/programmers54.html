@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+노드를 쌍으로 교환
+
+연결리스트에서 인접한 두 노드를 모두 교환하고 헤드를 반환한다.
+리스트의 노드에 있는 값을 수정하지 않고 문제를 해결
+
+-->
+<body>
+<script>
+
+function node(head) {
+    //리스트가 비어있거나 노드가 하나뿐인 경우 반환
+    if (!head || !head.next) return head;
+
+    let one = new ListNode(0);
+    one.next = head;
+    let prev = one;
+
+    // 루프를 계속 반복
+    while (prev.next && prev.next.next) {
+        let first = prev.next;
+        let second = prev.next.next;
+
+        //첫번째 두번째 노드로 설정
+        first.next = second.next;
+        second.next = first;
+        prev.next = second;
+
+        //쌍으로 이동할 준비
+        prev = first;
+    }
+
+    return dummy.next;
+}
+
+</script>
+</body>
+
+

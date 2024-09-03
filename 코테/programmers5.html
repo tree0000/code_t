@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+    //자연수 뒤집어 배열로 만들기
+    function solution(n) {
+    let arr = n.toString().split('').reverse().map(Number);
+    return arr;
+}
+
+const n = 12345;
+const result = solution(n);
+console.log(result);  
+    </script>
+</body>
+
+
+
+

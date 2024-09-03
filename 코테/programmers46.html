@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+괄호가 바르게 짝지어졌다는 것은 '(' 문자로 열렸으면 반드시 짝지어서 ')' 문자로 닫혀야 한다는 뜻입니다. 예를 들어
+
+"()()" 또는 "(())()" 는 올바른 괄호입니다.
+")()(" 또는 "(()(" 는 올바르지 않은 괄호입니다.
+'(' 또는 ')' 로만 이루어진 문자열 s가 주어졌을 때, 문자열 s가 올바른 괄호이면 true를 return 하고, 올바르지 않은 괄호이면 false를 return 하는 solution 함수를 완성해 주세요.
+
+제한사항
+문자열 s의 길이 : 100,000 이하의 자연수
+문자열 s는 '(' 또는 ')' 로만 이루어져 있습니다.
+-->
+<body>
+<script>
+function solution(s) {
+    //키운트 변수 생성
+    let Count = 0;
+    // s 증가 담기
+    for (let i = 0; i < s.length; i++) {
+        //열린 괄호 
+        if (s[i] === '(') {
+            Count++;
+            //닫힘 괄호
+        } else if (s[i] === ')') {
+            if (openCount === 0) {
+                return false;  
+            }
+            Count--;
+        }
+    }
+    return Count === 0; 
+}
+// 효율성 실패
+// 수정
+//  배열에 담아 볼까? 
+//실패
+const solution = (s) => {
+    let result = true;
+    let arr = [];
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === '(') {
+            arr.push(s[i]);
+        } else if (s[i] === ')') {
+            if (arr.length === 0) {
+                result = false;
+                break; 
+            }
+            arr.pop();
+        }
+    }
+
+    if (arr.length !== 0) result = false;
+
+    return result;
+}
+//효율성 문제 
+// 성공 
+function solution(s) {
+    let stack = [];
+    for (let a of s) {
+        if (a === '(') {
+            stack.push(a);
+        } else if (a === ')') {
+            if (stack.length === 0) {
+                return false;
+            }
+            stack.pop();
+        }
+    }
+    
+    return stack.length === 0;
+}
+// 다른점 for of 사용 
+
+
+
+
+
+</script>
+</body>
+
+
