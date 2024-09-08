@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    참조타입과원시타입의 메모리 참조 방식은 다르다.
+    변수 값을 바꾸면 새로운 메모리에 할당하여 그 주소를 바라보게 변경하며 
+    기존 메모리는 시간이 지나면 자바스크립트 가비지 컬렉터에 정리
+
+    오브젝트
+    <script>
+          //key 값으로 받아오기
+        const obj = {
+            name:"park",
+            age:30,
+            'full-name':"parks"
+        }
+        console.log(obj.name);
+        console.log(obj['age']);
+
+        //삭제
+        const obj2 = {
+            name:"park"}
+            age:30
+            delete obj.age;
+        
+        //배열
+        const arr = [1,2,3];
+        console.log(arr[0]);
+        console.log(arr[1]);
+        //배열길이 length
+        console.log(arr.length);
+        //추가 
+        arr.push(4);
+        //삭제
+        const value = arr.pop();
+        console.log(value);
+        console.log(arr.length);
+        
+        
+        
+    </script>
+</body>
+</html>

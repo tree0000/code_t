@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    빌트인 데이터 타입
+    언어 자체에서 제공하는 원시타입, 참조타입이 있다.
+    원시타입 - 숫자,문자열,불리언
+    참조타입 - 오브젝트
+    -->
+    <script>
+        // 숫자
+        console.log(typeof 10);
+        console.log(typeof -5);
+        console.log(typeof 3.14);
+        console.log(typeof Infinity);
+        console.log(typeof NaN);
+        //타입변수 선언
+        let a =13;
+        let b =4;
+        console.log(a + b);
+        console.log(a - b);
+        console.log(a * b);
+        console.log(a / b);
+        console.log(a % b);
+        console.log( -a);
+        // 발투안 험수
+        console.log(Math.abs(-a));
+        console.log(Math.ceil(a/b));
+        console.log(Math.floor(a/b));
+        console.log(Math.round(a/b));
+        console.log(Math.trunc(-a/b));
+        console.log(Math.pow(a,b));
+        //숫자타입 비교연산
+        console.log(a == b);
+        console.log(a != b);
+        console.log(a > b);
+        console.log(a < b);
+        console.log(a >= b);
+        console.log(a <= b);
+        //숫자 타입비트연산
+        console.log(a | b);
+        console.log(a ^ b);
+        console.log(~a);
+        console.log(a<<2);
+        console.log(a>>1);
+        //숫자타입 논리 연산
+        console.log(a && b);
+        console.log(a || b);
+        console.log(!a);
+        //숫자타입 예외
+        console.log(a / 0);
+        console.log(a % 0);
+        console.log(a/ "string");
+        console.log(a % "string");
+        console.log(a / null);
+        console.log(a % null);
+        console.log(a / undefined);
+        console.log(a % undefined);
+        
+        //부동소수점 데이터를 다룰 떄는 엠실론을 항상 생각해라
+        console.log(Number.EPSILON);
+        let x = 0.1 + 0.1 + 0.1;
+        let y = 0.3;
+
+        console.log(a -b);
+        if(Math.abs(a-b)<Number.EPSILON){
+            console.log("a와 b는 같은 값");
+        }else{
+            console.log("a와 b는 다른값");
+        }
+        //문자열타입 빌트인 메서드
+        const c = "Hello, World"
+        console.log(c.length);
+        console.log(c.split(","));
+        console.log(c.startsWith("Hello"));
+        console.log(c.endsWith("World"));
+        console.log(c.includes("Ilo"));
+        console.log(c.indexOf("World"));
+        console.log(c.lastIndexOf("l"));
+        //특정 문자열로 대체
+        console.log(c.replace("World","javaScript"));
+        console.log(c.toUpperCase());
+        console.log(c.toLowerCase());
+        console.log(c.trim());
+        console.log(c.concat("||"));
+        
+
+        
+        
+
+
+        
+        
+        
+      
+        
+        
+
+    </script>
+</body>
+</html>
