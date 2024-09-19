@@ -49,8 +49,36 @@ return binary;
 
 // 괄호 회전하기
 
-function solution(s){
-    
+function isValidBracket(s) {
+    const stack = [];
+    for (const c of s) {
+        if (c === '(' || c === '[' || c === '{') {
+            stack.push(c);
+        } else {
+            if (stack.length === 0) return false;
+            const last = stack.pop();
+            if ((c === ')' && last !== '(') || 
+                (c === ']' && last !== '[') || 
+                (c === '}' && last !== '{')) {
+                return false;
+            }
+        }
+    }
+    return stack.length === 0;
+}
+
+function solution(s) {
+    const n = s.length;
+    let answer = 0;
+
+    for (let i = 0; i < n; i++) {
+        const rotated = s.slice(i) + s.slice(0, i);  
+        if (isValidBracket(rotated)) {
+            answer++;  
+        }
+    }
+
+    return answer;
 }
 
 
