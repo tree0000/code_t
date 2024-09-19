@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    괄호 짝 맞추기 
+
+    -->
+    <script>
+        //괄호 짝 맞추기 
+
+       function solution(s) {
+    const stack = [];
+    for (const c of s) {
+        if (c === '(') {
+            stack.push(c);
+        } else if (c === ')') {
+            if (stack.length === 0) {
+                return false;
+            } else {
+                stack.pop();
+            }
+        }
+    }
+    return stack.length === 0;
+}
+
+//  10진수를 2진수로 변환하기
+
+function solution(n) {
+    const stack = [];
+
+    while (decimal > 0){
+        const remainder = decimal % 2;
+        stack.push(remainder);
+        decimal = Math.floor(decimal / 2);
+    }
+    let binary = "";
+    while (stack.length > 0){
+        binary += stack.pop();
+}
+return binary;
+}
+
+
+// 괄호 회전하기
+
+function solution(s){
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 다리를 지나는 트럭
+
+
+
+    </script>
+</body>
+</html>
