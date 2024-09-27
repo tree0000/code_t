@@ -88,6 +88,51 @@
     const sum = numbers.reduce((a,b)=> a + b);
 
 
+    function solution(queue1, queue2) {
+
+
+const sumQueue = (arr) => arr.reduce((a, b) => a + b, 0);
+
+    let sum1 = sumQueue(queue1);
+    let sum2 = sumQueue(queue2);
+    const total = sum1 + sum2;
+    if (total % 2 !== 0) {
+        return -1;
+    }
+    const target = total / 2;
+    let count = 0;
+    let left = 0;
+    let right = queue1.length - 1;
+    while (sum1 !== target) {
+        if (sum1 < target) {
+            right++;
+            if (right === queue1.length) {
+                right = 0;
+            }
+            sum1 += queue2[right];
+        } else {
+            sum1 -= queue1[left];
+            left++;
+            if (left === queue1.length) {
+                left = 0;
+            }
+        }
+        count++;
+        if (count > queue1.length * 3) {
+            return -1;
+        }
+    }
+    return count;
+    
+
+
+
+
+
+
+
+}
+
 </script>
 </body>
 </html>
